@@ -40,16 +40,16 @@ int main(void)
     printf("\nHomework 1: Pointer-Based Swap Function\n### Part a: x,y ###\n");
     printf("Before Swap: x = %d, y = %d\n", x, y);
     Swap(&x, &y); // Call Swap passing addresses(&) of x and y
-    printf("After Swap: x = %d, y = %d\n", x, y);
+    printf("After Swap: x = %d, y = %d\n", x, y); 
 
     /* Part b: Swap function with x = 10, y = 21, and z = 32
         should return x = 32, y = 10, and z = 21. */
     int x2 = 10, y2 = 21, z = 32;
     printf("\n### Part b: x = 10, y = 21, z = 32 ###\n"); 
-    printf("should return x = 32, y = 10, and z =32\n");
+    printf("should return x = 32, y = 10, and z =21\n");
     printf("Before Swap: x = %d, y = %d, z = %d\n", x2, y2, z);
     SwapXYZ(&x2, &y2, &z);
-    printf("After Swap: x = %d, y = %d, z = %d\n", x2, y2, z);
+    printf("After Swap: x = %d, y = %d, z = %d\n", x2, y2, z); 
 
     return 0;
 }
