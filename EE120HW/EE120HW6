@@ -1,0 +1,38 @@
+// Martin Orozco Jr
+// EE120HW6
+
+// Question 1: Translate ASM code to C code
+
+// r0 = n (input/output), r1 = i (counter), r2 = result
+int func(int n) {
+    int result = 1;                  // MOV r2, #1
+    for (int i = 1; i <= n; i++) {   // MOV r1, #1 / CMP r1, r0 / BGT done / ADD r1, r1, #1 / B loop
+        result = result * i;         // MUL r2, r1, r2
+    }
+    return result;                   // MOV r0, r2
+}
+
+// Question 2: Implement endian conversion without REV
+//        ; Extract original lowest byte and move it to highest byte
+//        ;r0 contains input, r1 holds the result
+//        AND r1, r0, #0x000000FF
+//        LSL r1, r1, #24
+//
+//        ; Extract original second byte and move it left one byte
+//        AND r2, r0, #0x0000FF00
+//        LSL r2, r2, #8
+//        ORR r1, r1, r2
+//
+//        ; Extract original third byte and move it right one byte
+//        AND r2, r0, #0x00FF0000
+//        LSR r2, r2, #8
+//        ORR r1, r1, r2
+
+//        ; Move original highest byte to lowest byte
+//        LSR r2, r0, #24
+//        ORR r1, r1, r2
+
+//        ; Place converted result back into r0
+//        MOV r0, r1
+
+///// Question 3:
